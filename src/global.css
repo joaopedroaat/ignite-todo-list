@@ -20,6 +20,10 @@
   box-sizing: border-box;
 }
 
+:focus {
+  outline: 1px solid var(--purple);
+}
+
 body,
 input,
 button {

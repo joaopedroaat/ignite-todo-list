@@ -33,9 +33,12 @@ export function Task({ task, onStatusChange, onDelete }: TaskProps) {
                     checked={task.isCompleted}
                     onChange={handleTaskStatusChange}
                 />
-                <span className="checkBox"></span>
             </label>
-            <p>{task.description}</p>
+            <p
+                className={task.isCompleted ? styles.completed : ''}
+            >
+                {task.description}
+            </p>
             <button
                 onClick={handleTaskDelete}
             >

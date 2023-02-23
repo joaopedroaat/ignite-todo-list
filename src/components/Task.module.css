@@ -17,6 +17,13 @@
 .task p {
     color: var(--gray-100);
     width: 100%;
+    overflow-wrap: break-word;
+    text-align: justify;
+}
+
+.completed {
+    color: var(--gray-300) !important;
+    text-decoration: line-through;
 }
 
 .task button {
@@ -24,4 +31,39 @@
     border: none;
     color: var(--gray-300);
     cursor: pointer;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--form-background);
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid var(--blue);
+    border-radius: 100%;
+
+    display: grid;
+    place-content: center;
+
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    background-color: var(--gray-100);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--purple);
+    border-color: var(--purple);
 }
