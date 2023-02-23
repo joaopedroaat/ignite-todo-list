@@ -10,8 +10,13 @@
     border-radius: 8px;
 }
 
+.task+.task {
+    margin-top: 0.75rem;
+}
+
 .task p {
     color: var(--gray-100);
+    width: 100%;
 }
 
 .task button {

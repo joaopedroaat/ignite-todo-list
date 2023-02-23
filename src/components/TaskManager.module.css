@@ -1,3 +1,8 @@
+.wrapper {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .list {
     width: 100%;
     margin-top: 4rem;

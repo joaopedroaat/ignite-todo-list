@@ -11,13 +11,18 @@ export interface ITask {
 
 export interface TaskProps {
     task: ITask,
-    onStatusChange: (id: string) => void
+    onStatusChange: (id: string) => void,
+    onDelete: (id: string) => void
 }
 
-export function Task({ task, onStatusChange }: TaskProps) {
+export function Task({ task, onStatusChange, onDelete }: TaskProps) {
 
     function handleTaskStatusChange() {
         onStatusChange(task.id)
+    }
+
+    function handleTaskDelete() {
+        onDelete(task.id)
     }
 
     return (
@@ -31,7 +36,9 @@ export function Task({ task, onStatusChange }: TaskProps) {
                 <span className="checkBox"></span>
             </label>
             <p>{task.description}</p>
-            <button>
+            <button
+                onClick={handleTaskDelete}
+            >
                 <Trash size={24} />
             </button>
         </div>
