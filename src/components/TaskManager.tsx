@@ -8,19 +8,7 @@ import styles from './TaskManager.module.css'
 
 export function TaskManager() {
 
-    const [tasks, setTasks] = useState<ITask[]>([
-        {
-            id: uuidv4(),
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quae voluptas quisquam, perspiciatis illum saepe odio totam unde eos iure nemo consequatur, ducimus doloribus magnam culpa sapiente blanditiis aliquid architecto.',
-            isCompleted: false
-
-        },
-        {
-            id: uuidv4(),
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ',
-            isCompleted: false
-        }
-    ])
+    const [tasks, setTasks] = useState<ITask[]>([])
 
     function handleNewTaskCreated(newTask: ITask) {
         const arrayWithNewTask = [newTask, ...tasks]
