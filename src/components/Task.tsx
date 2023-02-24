@@ -27,23 +27,26 @@ export function Task({ task, onStatusChange, onDelete }: TaskProps) {
 
     return (
         <div className={styles.task}>
-            <label>
-                <input
-                    type="checkbox"
-                    checked={task.isCompleted}
-                    onChange={handleTaskStatusChange}
-                />
-            </label>
-            <p
-                className={task.isCompleted ? styles.completed : ''}
-            >
-                {task.description}
-            </p>
+            <div className={styles.info}>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        checked={task.isCompleted}
+                        onChange={handleTaskStatusChange}
+                    />
+                </label>
+                <p
+                    className={task.isCompleted ? styles.completed : ''}
+                >
+                    {task.description}
+                </p>
+            </div>
             <button
                 onClick={handleTaskDelete}
             >
                 <Trash size={24} />
             </button>
-        </div>
+        </div >
     )
 }

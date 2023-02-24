@@ -17,8 +17,16 @@
 .task p {
     color: var(--gray-100);
     width: 100%;
-    overflow-wrap: break-word;
+    word-wrap: break-word;
     text-align: justify;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 90%;
 }
 
 .completed {

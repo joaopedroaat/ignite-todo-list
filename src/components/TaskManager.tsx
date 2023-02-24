@@ -23,7 +23,10 @@ export function TaskManager() {
     ])
 
     function handleNewTaskCreated(newTask: ITask) {
-        setTasks([...tasks, newTask])
+        const arrayWithNewTask = [newTask, ...tasks]
+        const sortedTasks = sortTasks(arrayWithNewTask)
+
+        setTasks(sortedTasks)
     }
 
     function handleTaskStatusChange(id: string) {
@@ -32,7 +35,20 @@ export function TaskManager() {
         if (changedTask)
             changedTask.isCompleted = !changedTask.isCompleted
 
-        setTasks([...tasks])
+        const sortedTasks = sortTasks(tasks)
+
+        setTasks([...sortedTasks])
+    }
+
+    function sortTasks(tasks: ITask[]) {
+        return tasks.sort((a, b) => {
+            if (a.isCompleted && !b.isCompleted)
+                return 1
+            else if (!a.isCompleted && b.isCompleted)
+                return -1
+
+            return 0
+        })
     }
 
 
